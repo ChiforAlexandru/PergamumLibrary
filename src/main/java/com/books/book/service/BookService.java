@@ -61,6 +61,8 @@ public class BookService {
     }
 
     public List<Book> listAllBooks(){
-        return bookList;
+        List<Book> bookList1=bookList;
+        bookList1.sort(Comparator.comparing(Book::getAuthor).thenComparing(Book::getTitle));
+        return bookList1;
     }
 }
