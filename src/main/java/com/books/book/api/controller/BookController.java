@@ -49,7 +49,7 @@ public class BookController {
 
     @GetMapping("/library/delete")
     public String deleteBook(@RequestParam String title){
-        if (!bookService.deleteBook(title))
+        if (bookService.deleteBook(title))
             return "Book deleted: Title:"+title;
         else return "Book does not exist";
     }
